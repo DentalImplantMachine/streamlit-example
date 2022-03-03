@@ -11,7 +11,6 @@ st.title('Rank Tracker Optimized by Francis X - DIM')
 st.header("Rank Tracker (Serpstack API Edition)")
 st.markdown("In order to use this app, you will need a **free Serpstack API** key that allows you to use this interface for 100 free calls a month. You can generate your key by [signing up here](http://serpstack.com?utm_source=FirstPromoter&utm_medium=Affiliate&fpr=martechwithme).")
 
-
 form = st.form(key='rankTrackerForm')
 
 serpstack_key = form.text_input("Input Serpstack API key",value="562cf5f3e31f7edf7cad60c1ed90a473")
