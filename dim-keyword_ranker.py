@@ -161,7 +161,7 @@ if submit_button:
         df[domainQuery] = listPosition
         st.dataframe(df)
 
-    csv = df.to_csv(index=False)
+    csv = df.to_csv(index=True)
     b64 = base64.b64encode(csv.encode()).decode()
     st.markdown('### **⬇️ Download Output as CSV File **')
     href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as "filename.csv")'
