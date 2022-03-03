@@ -1,7 +1,6 @@
 # Welcome to Streamlit!
 
-Welcome to wild wild west, jim west deparado
+Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
-Welcome World, it's my from outerspace.
-
--Francis X
+If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
+forums](https://discuss.streamlit.io).
