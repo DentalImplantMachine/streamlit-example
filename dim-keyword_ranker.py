@@ -33,7 +33,7 @@ if submit_button:
     if "," not in keywordQuery and "," not in domainQuery:
 
         serp_results = requests.get(f"http://api.serpstack.com/search?access_key={serpstack_key}&query={keywordQuery}&device={device}&google_domain={google_domain}&auto_location=1")
-        position = "Either not ranking or >18"
+        position = "Either not ranking or >100"
 
         for every in serp_results.json()["organic_results"]:
             if domainQuery in every["domain"]:
@@ -41,8 +41,8 @@ if submit_button:
             else:
                 pass
         
-        if position == "Either not ranking or >18":
-            output = st.write(f"{domainQuery} is either not ranking or >18 for {keywordQuery}")
+        if position == "Either not ranking or >100":
+            output = st.write(f"{domainQuery} is either not ranking or >100 for {keywordQuery}")
 
         else:
             output = st.write(f"{domainQuery} ranks #{position} for the keyword '{keywordQuery}' on {device} on {google_domain}.")
