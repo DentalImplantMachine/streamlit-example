@@ -1,21 +1,18 @@
 import streamlit as st
 import base64
-import csv
 import requests
 
 import pandas as pd
 
 st.set_page_config(page_title="Rank Tracker",page_icon="📈",layout="wide"   )
 
-st.title('Rank Tracker by Yaniss Illoul from Martech with Me')
+st.title('Rank Tracker Optimized by Francis X - DIM')
 st.header("Rank Tracker (Serpstack API Edition)")
-st.markdown("In order to use this app, you will need a **free Serpstack API** key that allows you to use this interface for 100 free calls a month. You can generate your key by [signing up here](http://serpstack.com?utm_source=FirstPromoter&utm_medium=Affiliate&fpr=martechwithme).")
-st.markdown("This interface has been developed by [Yaniss Illoul](https://www.linkedin.com/in/yanissi/) (Feel free to connect!) from [Martech with Me](https://martechwithme.com/?utm_source=ranktracker&utm_medium=streamlit).")
-st.markdown("If you like this project, please consider visiting my website for more Martech tools and tutorials. Don't hesitate to reach out if you have any feature requests or ideas.")
+st.markdown("Uses the SerpStack API")
 
 form = st.form(key='rankTrackerForm')
 
-serpstack_key = form.text_input("Input Serpstack API key",value="")
+serpstack_key = form.text_input("Input Serpstack API key",value="562cf5f3e31f7edf7cad60c1ed90a473")
 
 
 
@@ -24,7 +21,7 @@ google_domain = form.text_input('Enter Google Domain (google.fr, google.de, ...)
 
 
 keywordQuery = form.text_input('Enter Keyword(s). If multiple, separate with a comma.',value=None)
-domainQuery = form.text_input('Enter Domain(s). If multiple, separate with a comma.',value=None)
+domainQuery = form.text_input('Enter Domain(s). If multiple, separate with a comma.',value= "www.localdentalimplants.dentist")
 
 
 submit_button = form.form_submit_button(label='Submit')
@@ -161,8 +158,3 @@ if submit_button:
         df[domainQuery] = listPosition
         st.dataframe(df)
 
-    csv = df.to_csv(index=True)
-    b64 = base64.b64encode(csv.encode()).decode()
-    st.markdown('### **⬇️ Download Output as CSV File **')
-    href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as "filename.csv")'
-    st.markdown(href, unsafe_allow_html=True)
