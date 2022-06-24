@@ -15,7 +15,7 @@ st.markdown("2022")
 
 form = st.form(key='rankTrackerForm')
 
-serpstack_key = form.text_input("Input Serpstack API key",value="")
+serpstack_key = form.text_input("Input Serpstack API key",value="2ca8087f681438ea9e8adfd0cb0ea69f")
 
 
 
